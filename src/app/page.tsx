@@ -1,5 +1,3 @@
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import Image from "next/image";
 import ShineBorder from "@/components/ui/shine-border";
 import { Card, CardContent, CardTitle } from "@/components/ui/card";

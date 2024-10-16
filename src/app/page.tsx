@@ -1,101 +1,74 @@
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import Image from "next/image";
+import ShineBorder from "@/components/ui/shine-border";
+import { Card, CardContent, CardTitle } from "@/components/ui/card";
+import WordRotate from "@/components/ui/word-rotate";
+import BetaForm from "@/components/betaform";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="p-5">
+      <div className="flex">
+      <Image src="/currency-animate.svg" width={350} height={400}alt="hero image" className="-translate-y-12 hidden lg:block"/>
+      <div className="flex flex-col justify-center items-center space-y-5">
+      <div className="font-bold text-center text-3xl">
+      <span>Prenez de l'avance sur vos finances avec un suivi précis de vos</span><WordRotate words={[" dépenses.","revenus.","budgets."]}/>
+      </div>
+     <div>
+     Suivez facilement vos dépenses, fixez des budgets, et recevez des analyses précises pour améliorer vos finances. Entrez votre email et soyez le premier à tester les fonctionnalités gratuitement.
+     </div>
+     <BetaForm/>
+     
+      </div>
+      <Image src="/Conversion rate optimization-amico(2).svg" width={300} height={350}alt="hero image" className="hidden p-4 translate-y-12 lg:block"
+      layout="intrinsic"/>
+    </div>
+    <div className="flex flex-col gap-5 p-5">
+      <h1 className="text-xl font-bold">Fonctionnalités</h1>
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
+          <ShineBorder  color={["#A07CFE", "#FE8FB5", "#FFBE7B"]}>
+            <Card className=" text-center border-none w-full h-full p-5 box-border space-y-2">
+              <CardTitle>
+              Gestion des Budgets Personnalisés
+              </CardTitle>
+              <CardContent>
+              Definissez des budgets pour différentes catégories (alimentation, loisirs, etc.) et de recevoir des alertes lorsqu'ils sont presque dépassés.
+              </CardContent>
+            </Card>
+          </ShineBorder>
+          <ShineBorder  color={["#A07CFE", "#FE8FB5", "#FFBE7B"]}>
+            <Card className=" text-center border-none w-full h-full p-5 box-border space-y-2">
+              <CardTitle>
+              Suivi des Dépenses en Temps Réel
+              </CardTitle>
+              <CardContent>
+              Enregistrez et classez automatiquement chaque dépense, avec une vue d'ensemble quotidienne, hebdomadaire ou mensuelle.
+              </CardContent>
+            </Card>
+          </ShineBorder>
+          <ShineBorder  color={["#A07CFE", "#FE8FB5", "#FFBE7B"]}>
+            <Card className=" text-center border-none w-full h-full p-5 box-border space-y-2">
+              <CardTitle>
+              Rapports Financiers et Analyses
+              </CardTitle>
+              <CardContent>
+              Obtenez des graphiques et des rapports détaillés pour comprendre et analyser vos habitudes de dépenses et optimiser vos finances.
+              </CardContent>
+            </Card>
+          </ShineBorder>
+          <ShineBorder  color={["#A07CFE", "#FE8FB5", "#FFBE7B"]}>
+            <Card className=" text-center border-none w-full h-full p-5 box-border space-y-2">
+              <CardTitle>
+              Notifications et Rappels
+              </CardTitle>
+              <CardContent>
+              Envoie des rappels pour les paiements à venir et des notifications sur les transactions importantes ou des anomalies dans les dépenses.
+              </CardContent>
+            </Card>
+          </ShineBorder>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+    </div>
     </div>
   );
 }
